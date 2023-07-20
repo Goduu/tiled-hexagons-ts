@@ -1,0 +1,25 @@
+{
+  "name": "tiled-hexagons-ts",
+  "version": "0.1.0",
+  "description": "Tiled Hexagons TS",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Goduu/tiled-hexagons-ts.git"
+  },
+  "keywords": [
+    "hexagon",
+    "react",
+    "typescript",
+    "ts"
+  ],
+  "author": "Goduu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Goduu/tiled-hexagons-ts/issues"
+  },
+  "homepage": "https://github.com/Goduu/tiled-hexagons-ts#readme"
+}
