@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/Goduu/tiled-hexagons-ts/issues"
   },
-  "homepage": "https://github.com/Goduu/tiled-hexagons-ts#readme"
+  "homepage": "https://github.com/Goduu/tiled-hexagons-ts#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "vitest": "^0.33.0"
+  }
 }
