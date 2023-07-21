@@ -1,10 +1,13 @@
 {
   "name": "tiled-hexagons-ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tiled Hexagons TS",
   "main": "./src/index.js",
   "scripts": {
-    "test": "vitest"
+    "build": "babel src --out-dir dist",
+    "test": "vitest",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -22,10 +25,33 @@
     "url": "https://github.com/Goduu/tiled-hexagons-ts/issues"
   },
   "homepage": "https://github.com/Goduu/tiled-hexagons-ts#readme",
-  "dependencies": {
-    "react": "^18.2.0"
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.1.0",
+    "@storybook/addon-interactions": "^7.1.0",
+    "@storybook/addon-links": "^7.1.0",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.1.0",
+    "@storybook/react": "^7.1.0",
+    "@storybook/react-vite": "^7.1.0",
+    "@storybook/testing-library": "^0.2.0",
+    "eslint": "^8.40.0",
+    "eslint-plugin-storybook": "^0.6.13",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.1.0",
+    "typescript": "^5.0.4",
     "vitest": "^0.33.0"
+  },
+  "dependencies": {
+    "tiled-hexagons-ts": "^0.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }

@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { calculateRowCount } from "../calculateRowCount";
-import { createRowItems } from "../createRowItems";
+import { createRowItems } from "../squareGrid/functions/createRowItems";
 
 describe("createRowItems", () => {
   it("should work", () => {
@@ -11,16 +10,20 @@ describe("createRowItems", () => {
     expect(result).toMatchInlineSnapshot(`
       [
         {
-          "first": 1,
-          "last": 7,
+          "first": 0,
+          "last": 6,
         },
         {
-          "first": 8,
-          "last": 13,
+          "first": 7,
+          "last": 12,
         },
         {
-          "first": 14,
-          "last": 20,
+          "first": 13,
+          "last": 19,
+        },
+        {
+          "first": 20,
+          "last": 25,
         },
       ]
     `);

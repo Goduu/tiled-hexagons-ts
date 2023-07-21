@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { calculateSquareGridDimensions } from "../calculateSquareGridDimensions";
+import { calculateSquareGridDimensions } from "../squareGrid/functions/calculateSquareGridDimensions";
 
 describe("calculateSquareGridDimensions", () => {
   it("should work", () => {

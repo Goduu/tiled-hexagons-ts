@@ -11,14 +11,24 @@ export const createRowItems = (
   rowCount: number,
   maxHorizontalTiles: number
 ): RowItem[] => {
-  const rowItems: RowItem[] = [];
-  let last = 0;
+  const rowItems: RowItem[] = [{ first: 0, last: maxHorizontalTiles - 1 }];
+  if (maxHorizontalTiles == 1) {
+    return Array(rowCount)
+      .fill(0)
+      .map((_, i) => {
+        return { first: i, last: i };
+      });
+  }
 
-  for (let c = 0; c < rowCount; c++) {
-    const evenOddModifier = c % 2 === 0 ? 0 : -1;
-    const first = last + 1;
-    last = first + maxHorizontalTiles + evenOddModifier - 1;
-    rowItems.push({ first, last });
+  for (var c = 1; c <= rowCount; c++) {
+    const evenOddModifier = c % 2 == 0 ? 0 : -1;
+    const lastItem = rowItems.at(-1);
+
+    lastItem &&
+      rowItems.push({
+        first: lastItem?.last + 1,
+        last: lastItem?.last + maxHorizontalTiles + evenOddModifier,
+      });
   }
 
   return rowItems;

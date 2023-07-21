@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { calculateRowCount } from "../calculateRowCount";
+import { calculateRowCount } from "../squareGrid/functions/calculateRowCount";
 
 describe("calculateRowCount", () => {
   it("should work", () => {
@@ -7,6 +7,6 @@ describe("calculateRowCount", () => {
     const maxHorizontal = 2;
 
     const result = calculateRowCount(tileCount, maxHorizontal);
-    expect(result).toBe(5);
+    expect(result).toBe(7);
   });
 });

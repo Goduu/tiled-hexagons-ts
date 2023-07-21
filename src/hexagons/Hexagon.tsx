@@ -1,8 +1,8 @@
 import React, {
   useState,
-  type FC,
-  type CSSProperties,
-  type HTMLAttributeAnchorTarget,
+  FC,
+  CSSProperties,
+  HTMLAttributeAnchorTarget,
 } from "react";
 import { HexagonVector } from "./HexagonVector";
 import { generateHexDPath } from "./generateHexSVG";

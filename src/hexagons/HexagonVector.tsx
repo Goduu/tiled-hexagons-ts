@@ -1,4 +1,4 @@
-import { type CSSProperties, type FC } from "react";
+import { CSSProperties, FC } from "react";
 import { generateHexDPath } from "./generateHexSVG";
 
 export interface HexagonVectorProps {

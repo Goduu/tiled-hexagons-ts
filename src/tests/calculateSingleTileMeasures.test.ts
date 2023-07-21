@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { calculateRowCount } from "../calculateRowCount";
-import { calculateSingleTileMeasures } from "../calculateSingleTileMeasures";
+import { calculateSingleTileMeasures } from "../squareGrid/functions/calculateSingleTileMeasures";
 
 describe("calculateSingleTileMeasures", () => {
   it("should work", () => {

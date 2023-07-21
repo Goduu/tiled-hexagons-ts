@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { calculatePosition } from "../calculatePosition";
-import { RowItem } from "../../SquareGrid";
+import { RowItem } from "../squareGrid/SquareGrid";
+import { calculatePosition } from "../squareGrid/functions/calculatePosition";
 
 describe("calculatePosition", () => {
   it("should work", () => {

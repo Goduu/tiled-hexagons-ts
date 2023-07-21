@@ -1,4 +1,4 @@
-import React, { type CSSProperties, type FC } from "react";
+import React, { CSSProperties, FC } from "react";
 import { Hexagon } from "../hexagons/Hexagon";
 import { createRowItems } from "./functions/createRowItems";
 import { calculateRowCount } from "./functions/calculateRowCount";
