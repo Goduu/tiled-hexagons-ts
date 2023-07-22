@@ -20,7 +20,7 @@ export const createRowItems = (
       });
   }
 
-  for (var c = 1; c <= rowCount; c++) {
+  for (let c = 1; c <= rowCount; c++) {
     const evenOddModifier = c % 2 == 0 ? 0 : -1;
     const lastItem = rowItems.at(-1);
 
