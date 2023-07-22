@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "import", "unused-imports", "no-relative-import-paths"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "prettier"
+  ],
+  "rules": {
+    "no-relative-import-paths/no-relative-import-paths": ["warn", { "allowSameFolder": true }],
+
+    // Too many false-positives
+    "@typescript-eslint/ban-types": "off",
+
+    // Reports a false-positive when both target="_blank" and rel="noopener" are
+    // present using a boolean condition.
+    "react/jsx-no-target-blank": "off",
+
+    // Often the findings are correct but inconvenient, e.g. comparing a value
+    // to an enum with currently only one value that we know will grow in the
+    // future.
+    "@typescript-eslint/no-unnecessary-condition": "off",
+
+    // Not an error. Also yields a false-positive when extending an interface.
+    "@typescript-eslint/no-empty-interface": "off",
+
+    "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/consistent-type-assertions": ["error", { "assertionStyle": "never" }],
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "args": "none",
+        "argsIgnorePattern": ".*",
+        "destructuredArrayIgnorePattern": ".*",
+        "ignoreRestSiblings": true,
+        "vars": "all"
+      }
+    ],
+
+    // Expensive
+    "import/no-deprecated": "off",
+    "import/namespace": "off",
+    "import/no-cycle": "off",
+
+    "curly": "warn",
+    "eqeqeq": "error",
+    "import/export": "error",
+    "import/first": "warn",
+    "import/newline-after-import": "warn",
+    "import/no-default-export": "error",
+    "import/no-duplicates": "error",
+    "import/no-extraneous-dependencies": "error",
+    "import/no-mutable-exports": "error",
+    "import/no-self-import": "error",
+    "import/no-useless-path-segments": "warn",
+    "import/no-webpack-loader-syntax": "error",
+    "import/order": [
+      "warn",
+      {
+        "alphabetize": { "caseInsensitive": true, "order": "asc" },
+        "newlines-between": "always",
+        "pathGroups": [
+          { "group": "external", "pattern": "src/**", "position": "after" },
+          { "group": "external", "pattern": "playwright/**", "position": "after" }
+        ]
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["../**"]
+          },
+          {
+            "group": ["@mui/system"]
+          },
+          {
+            "group": ["@mui/icons-material"]
+          },
+          {
+            "group": ["@mui/*"],
+            "importNames": ["Select", "TextField", "Autocomplete", "DataGrid", "DataGridPro", "DataGridPremium"]
+          }
+        ]
+      }
+    ],
+    "react-hooks/exhaustive-deps": "error",
+    "spaced-comment": "warn",
+    "unused-imports/no-unused-imports": "warn"
+  },
+  "overrides": [
+    // Config files
+    {
+      "files": ["*.*js", "*.*ts"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off",
+        "import/no-default-export": "off"
+      }
+    },
+
+    // Vitest tests
+    {
+      "files": ["src/**/*.test.{ts,tsx}"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript",
+        "prettier"
+      ],
+      "rules": {
+        "@typescript-eslint/consistent-type-assertions": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "no-restricted-imports": ["error", { "patterns": ["react-dom/test-utils", "@apollo/client/testing"] }]
+      }
+    },
+
+  ]
+}
